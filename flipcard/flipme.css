@@ -1,0 +1,97 @@
+:root {
+    --dark: rgb(25, 35, 44);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.img img {
+    border-radius: 20%;
+}
+
+.container {
+    background-color: var(--dark);
+    color: rgb(255, 94, 0);
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.flipcard {
+    width: 300px;
+    height: 300px;
+    perspective: 1000px;
+    background-color: transparent;
+}
+
+.innerCard {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.flipcard:hover .innerCard {
+    transform: rotateY(180deg);
+}
+
+.front, .back {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    backface-visibility: hidden;
+}
+
+
+.back {
+    background-color: rgb(34, 47, 58);
+    border-radius: 20%;
+    transform: rotateY(180deg);
+    padding: 12px 10px;
+    animation: shadow 2s infinite ease-in-out;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes shadow {
+    0%{box-shadow: 0px 2px 4px 0px rgba(255, 255, 255, 0.459);}
+    50%{box-shadow: 0px 2px 4px 0px rgb(255, 255, 255);}
+    100%{box-shadow: 0px 2px 4px 0px rgba(255, 255, 255, 0.459);}
+}
+
+b {
+    color: rgb(136, 255, 0);
+}
+
+.link {
+    margin-top: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+.link a {
+    color: whitesmoke;
+    margin: 4px 12px;
+    font-size: 30px;
+}
+
+.text {
+    position: absolute;
+    text-align: center;
+    top: 85%;
+    font-weight: bold;
+    color: orange;
+    font-size: 16px;
+    text-shadow: 0px 4px 6px rgb(0, 0, 0);
+}
